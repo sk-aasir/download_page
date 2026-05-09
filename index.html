@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
 
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#0f172a,#1e293b);
+        }
+
+        .container{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            text-align:center;
+            width:350px;
+        }
+
+        h1{
+            margin-bottom:30px;
+            color:#111827;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            margin:10px 0;
+            border:none;
+            border-radius:12px;
+            font-size:18px;
+            cursor:pointer;
+            transition:.3s;
+            font-weight:bold;
+        }
+
+        .copy-btn{
+            background:#2563eb;
+            color:white;
+        }
+
+        .copy-btn:hover{
+            background:#1d4ed8;
+        }
+
+        .download-btn{
+            background:#16a34a;
+            color:white;
+        }
+
+        .download-btn:hover{
+            background:#15803d;
+        }
+
+        .message{
+            margin-top:15px;
+            color:#16a34a;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Download Page</h1>
+
+        <button class="copy-btn" onclick="copyLink()">Copy Link</button>
+        <button class="download-btn" onclick="downloadFile()">Download EXE</button>
+
+        <div class="message" id="msg"></div>
+    </div>
+
+    <script>
+        const copyURL = "https://youtu.be/iNp02zXy748?si=X2Xx8cBeIhtnGYo3";
+        const downloadURL = "https://dwn.networklookout.com/nmemplpro.exe";
+
+        function copyLink(){
+            navigator.clipboard.writeText(copyURL);
+            document.getElementById("msg").innerText = "Link copied successfully!";
+        }
+
+        function downloadFile(){
+            window.location.href = downloadURL;
+        }
+    </script>
+
+</body>
+</html>
